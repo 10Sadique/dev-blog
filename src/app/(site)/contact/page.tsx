@@ -23,7 +23,7 @@ const Contact = () => {
               </span>
             </CardTitle>
             <CardDescription className="text-balance">
-              {`Get the latest update from us where ever you are`}
+              {`Get the latest update from us where ever you are.`}
             </CardDescription>
           </CardHeader>
           <CardContent>

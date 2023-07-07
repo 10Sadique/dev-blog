@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="py-24 space-y-8 lg:space-y-14 text-center">
       <h1 className="font-black lg:text-9xl text-4xl text-balance">
         Better{' '}
-        <span className="text-transparent bg-clip-text bg-gradient-to-tr dark:from-pink-500 dark:via-red-500 dark:to-yellow-500 from-rose-400 via-fuchsia-500 to-indigo-500">
+        <span className="text-transparent bg-clip-text bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 ">
           design
         </span>{' '}
         for digital products.

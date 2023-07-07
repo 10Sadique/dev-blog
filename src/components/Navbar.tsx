@@ -74,7 +74,7 @@ export const Navbar = () => {
   return (
     <nav className="py-2 border-b bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl sticky top-0">
       <div className="container flex items-center justify-between">
-        <Link href={'/'} className="font-bold text-2xl">
+        <Link href={'/'} className="font-bold text-2xl ">
           Moonshine
         </Link>
 
@@ -89,7 +89,8 @@ export const Navbar = () => {
                 key={route.id}
                 href={route.href}
                 className={clsx(
-                  route.active && 'text-gray-950 dark:text-zinc-200'
+                  route.active &&
+                    'text-transparent bg-clip-text bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500'
                 )}
               >
                 {route.label}

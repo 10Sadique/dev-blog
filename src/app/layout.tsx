@@ -3,11 +3,14 @@ import type { Metadata } from 'next';
 
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-
-import './globals.css';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
-const inter = Inter({ subsets: ['latin'] });
+import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
 
 export const metadata: Metadata = {
   title: 'Moonshine',

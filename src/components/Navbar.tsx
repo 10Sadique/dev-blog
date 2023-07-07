@@ -13,8 +13,8 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { ModeToggle } from './ToggleMode';
-import { MobileMenu } from './MobileMenu';
+import { ModeToggle } from '@/components/ToggleMode';
+import { MobileMenu } from '@/components/MobileMenu';
 
 export type RouteType = {
   id: number;
@@ -72,7 +72,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="py-2 border-b">
+    <nav className="py-2 border-b bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl sticky top-0">
       <div className="container flex items-center justify-between">
         <Link href={'/'} className="font-bold text-2xl">
           Moonshine
@@ -81,7 +81,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-5">
           <div
             className={clsx(
-              'lg:flex text-zinc-400 items-center gap-x-8 hidden font-semibold dark:text-zinc-500'
+              'lg:flex text-zinc-500 items-center gap-x-8 hidden font-semibold dark:text-zinc-400'
             )}
           >
             {routes.map((route) => (

@@ -38,7 +38,7 @@ export const Navbar = () => {
       id: 2,
       label: 'Portfolio',
       href: '/portfolio',
-      active: pathname === '/portfolio',
+      active: pathname.startsWith('/portfolio'),
       icon: <Gem className="mr-2 h-4 w-4" />,
     },
     {
@@ -81,7 +81,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-5">
           <div
             className={clsx(
-              'lg:flex text-zinc-500 items-center gap-x-8 hidden font-semibold dark:text-zinc-400'
+              'lg:flex text-zinc-600 items-center gap-x-8 hidden font-semibold dark:text-zinc-400'
             )}
           >
             {routes.map((route) => (

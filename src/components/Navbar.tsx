@@ -45,7 +45,7 @@ export const Navbar = () => {
       id: 3,
       label: 'Blog',
       href: '/blog',
-      active: pathname === '/blog',
+      active: pathname.startsWith('/blog'),
       icon: <Milestone className="mr-2 h-4 w-4" />,
     },
     {

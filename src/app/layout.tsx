@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
 import './globals.css';
 import { AuthProvider } from '@/components/providers/AuthProvider';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AuthProvider>
+            <Toaster />
             <Navbar />
             {children}
             <Footer />

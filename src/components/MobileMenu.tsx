@@ -11,6 +11,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { RouteType } from './Navbar';
 import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 
 interface IMobileMenu {
   routes: RouteType[];
@@ -42,6 +43,11 @@ export const MobileMenu: React.FC<IMobileMenu> = ({ routes }) => {
                 </Link>
               </DropdownMenuItem>
             ))}
+            <DropdownMenuItem>
+              <Button onClick={() => signOut()} className="w-full">
+                Sign Out
+              </Button>
+            </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>

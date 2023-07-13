@@ -1,10 +1,15 @@
-import { InferSchemaType, Schema, model, models } from 'mongoose';
+import { InferSchemaType, Schema, model, models, Model } from 'mongoose';
+
+interface IUser {
+  name: string;
+  email: string;
+  password?: string;
+}
 
 const userSchema = new Schema(
   {
     name: {
       type: String,
-      unique: true,
       required: true,
     },
     email: {
@@ -14,15 +19,11 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      unique: true,
-      required: true,
     },
   },
   { timestamps: true }
 );
 
-export type UserType = InferSchemaType<typeof userSchema>;
+const User = models.User || model('User', userSchema);
 
-const UserModel = models.User || model('User', userSchema);
-
-export default UserModel;
+export default User;

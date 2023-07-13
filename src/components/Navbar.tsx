@@ -11,10 +11,13 @@ import {
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { ModeToggle } from '@/components/ToggleMode';
 import { MobileMenu } from '@/components/MobileMenu';
+import { signOut, useSession } from 'next-auth/react';
+import { Button } from './ui/button';
+import { useEffect } from 'react';
 
 export type RouteType = {
   id: number;
@@ -25,6 +28,8 @@ export type RouteType = {
 };
 
 export const Navbar = () => {
+  const router = useRouter();
+  const session = useSession();
   const pathname = usePathname();
   const routes: RouteType[] = [
     {
@@ -72,7 +77,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="py-2 border-b bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl sticky top-0">
+    <nav className="py-2.5 border-b bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl sticky top-0">
       <div className="container flex items-center justify-between">
         <Link href={'/'} className="font-bold text-2xl ">
           Moonshine
@@ -98,6 +103,16 @@ export const Navbar = () => {
             ))}
           </div>
           <ModeToggle />
+          {session.status === 'authenticated' && (
+            <Button
+              onClick={() => {
+                signOut();
+              }}
+              className="hidden lg:block"
+            >
+              Sign Out
+            </Button>
+          )}
           <MobileMenu routes={routes} />
         </div>
       </div>
